@@ -7,10 +7,10 @@ export const UserContext = createContext(null);//export UserContext
 
 const UserInfo = () => {
   const { a } = useContext(AppContext);//AppContext {get, set}
-  const [u, setU] = useState("");//local state
+  const [u, setU] = useState("");//UserContext state store
 
   return (
-    <UserContext.Provider value={{ u, setU }}>{/* UserContext.Provider value */}
+    <UserContext.Provider value={{ u, setU }}>{/* UserContext.Provider - add {get,set} to state */}
       <p><b>{a}</b></p>
       <I />
       <O />
