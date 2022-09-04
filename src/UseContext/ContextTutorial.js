@@ -1,18 +1,15 @@
-import React, { useState, createContext } from "react";
-import Login from "./Login";
-import User from "./User";
+import React, { useState, createContext } from "react";//import createContext
+import UI from "./UserInfo/UserInfo";
 
-export const AppContext = createContext(null);
+export const AppContext = createContext({ b:'B' });//export AppContext
 
-function ContextTutorial() {
-  const [username, setUsername] = useState("");
+const ContextTutorial = () => {
+  const [a, setA] = useState("ADMIN");//local state
 
   return (
-    <AppContext.Provider value={{ username, setUsername }}>
-      <Login /> 
-      <User />
+    <AppContext.Provider value={{ a, setA }}>{/* AppContext.Provider value */}
+      <UI />
     </AppContext.Provider>
   );
 }
-
 export default ContextTutorial;
