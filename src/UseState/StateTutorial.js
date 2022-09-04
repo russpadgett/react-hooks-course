@@ -1,16 +1,11 @@
 import React, { useState } from "react";
 
 const StateTutorial = () => {
-  const [inputValue, setInputValue] = useState("Pedro");
-
-  let onChange = (event) => {
-    const newValue = event.target.value;
-    setInputValue(newValue);
-  };
+  const [inputValue, setInputValue] = useState("");
 
   return (
     <div>
-      <input placeholder="enter something..." onChange={onChange} />
+      <input placeholder="type..." onChange={({target:{value}}) => setInputValue(value)} />
       {inputValue}
     </div>
   );

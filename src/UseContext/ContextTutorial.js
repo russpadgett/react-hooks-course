@@ -9,7 +9,8 @@ function ContextTutorial() {
 
   return (
     <AppContext.Provider value={{ username, setUsername }}>
-      <Login /> <User />
+      <Login /> 
+      <User />
     </AppContext.Provider>
   );
 }

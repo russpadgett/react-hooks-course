@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 
-function Child({ returnComment }) {
+const Child = ({ returnComment }) => {
   useEffect(() => {
-    console.log("FUNCTION WAS CALLED");
+    console.debug("FUNCTION WAS CALLED");
   }, [returnComment]);
 
-  return <div>{returnComment("Pedro")}</div>;
+  return <div>{returnComment("Child Comment 1")}</div>;
 }
 
 export default Child;

@@ -1,6 +1,6 @@
-import React, { forwardRef, useImperativeHandle, useState } from "react";
+import React, { forwardRef, Fragment, useImperativeHandle, useState } from "react";
 
-const Button = forwardRef((props, ref) => {
+const ChildButton = forwardRef((props, ref) => {
   const [toggle, setToggle] = useState(false);
 
   useImperativeHandle(ref, () => ({
@@ -9,11 +9,11 @@ const Button = forwardRef((props, ref) => {
     },
   }));
   return (
-    <> 
-      <button onClick={()=>{setToggle(!toggle)}}>Button From Child</button>
+    <Fragment> 
+      <button onClick={()=>setToggle(!toggle)}>Child Button</button>
       {toggle && <span>Toggle</span>}
-    </>
+    </Fragment>
   );
 });
 
-export default Button;
+export default ChildButton;

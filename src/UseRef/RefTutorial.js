@@ -4,9 +4,10 @@ function RefTutorial() {
   const inputRef = useRef(null);
 
   const onClick = () => {
-    console.log(inputRef.current.value)
-    inputRef.current.value = "";
-    inputRef.current.focus();
+    const c = inputRef.current;
+    console.log(`type:${c.type} placeholder:${c.placeholder} value:${c.value}`)
+    c.value = "POW";
+    c.focus();
   };
   return (
     <div>

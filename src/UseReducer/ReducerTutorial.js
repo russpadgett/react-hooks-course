@@ -1,14 +1,10 @@
 import React, { useReducer } from "react";
 
 const reducer = (state, action) => {
-  switch (action.type) {
-    case "INCREMENT":
-      return { count: state.count + 1, showText: state.showText };
-    case "toggleShowText":
-      return { count: state.count, showText: !state.showText };
-    default:
-      return state;
-  }
+  let newState = {};
+  newState['count'] = action.type === "INCREMENT" ? state.count + 1 : state.count;
+  newState['showText'] = action.type === "TOGGLE" ? !state.showText : state.showText;
+  return newState;
 };
 
 const ReducerTutorial = () => {
@@ -20,7 +16,7 @@ const ReducerTutorial = () => {
       <button
         onClick={() => {
           dispatch({ type: "INCREMENT" });
-          dispatch({ type: "toggleShowText" });
+          dispatch({ type: "TOGGLE" });
         }}
       >
         Click Here
