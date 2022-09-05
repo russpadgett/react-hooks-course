@@ -11,9 +11,10 @@ function LayoutEffectTutorial() {
     inputRef.current.value = "HELLO";
   }, []);
 
-
   return (
     <div className="App">
+    <h1>Render</h1>
+    <h2>useLayoutEffect, useEffect, useRef </h2>
       <input ref={inputRef} value="PEDRO" onChange={()=>{}} style={{ width: 400, height: 60 }} />
     </div>
   );

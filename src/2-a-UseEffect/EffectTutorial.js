@@ -16,8 +16,9 @@ function EffectTutorial() {
 
   return (
     <div>
-      Hello World
-      <h1>{data}</h1>
+    <h1>Render</h1>
+    <h2>axios, useEffect, useRef </h2>
+    <h1>{data}</h1>
       <h1>{count}</h1>
       <button onClick={() => setCount(count + 1)}>Click</button>
     </div>

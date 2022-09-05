@@ -11,6 +11,8 @@ const UserInfo = () => {
 
   return (
     <UserContext.Provider value={{ u, setU }}>{/* UserContext.Provider - add {get,set} to state */}
+      <h1>State -  multi page, multi state items</h1>
+      <h2>createContext, useContext, useState</h2>     
       <p><b>{a}</b></p>
       <I />
       <O />

@@ -13,6 +13,8 @@ export default function CallBackTutorial() {
 
   return (
     <div className="App">
+      <h1>Cache function call</h1>
+      <h2>useCallback, UseState</h2>
       <Child returnComment={returnComment} />
       <Child2 returnComment2={returnComment2} />
 
