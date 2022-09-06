@@ -8,7 +8,7 @@ const StateTutorial = () => {
       <h1>State - single page, single state item</h1>
       <h2>useState</h2>   
       <input placeholder="type..." onChange={({target:{value}}) => setInputValue(value)} />
-      {inputValue}
+      <h2>{inputValue}</h2>
     </div>
   );
 };

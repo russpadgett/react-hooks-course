@@ -3,7 +3,7 @@ import { UserContext } from "./UserInfo"; //ref UserContext
 
 const Input = () => {
   const { setU } = useContext(UserContext); //UserContext {get, set}
-  return <input onChange={({ target: { value } }) => {setU(value); }} />;
+  return <div className="double fl"><h2><input onChange={({ target: { value } }) => {setU(value); }} /></h2></div>;
 };
 
 export default Input;

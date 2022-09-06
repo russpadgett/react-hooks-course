@@ -37,3 +37,7 @@
     transform: rotate(360deg);
   }
 }
+
+div.double {border-style: double;}
+div.fl{float:left;}
+div.cl{clear: both;}
