@@ -1,9 +1,9 @@
-import React, { useContext } from "react";//useContext required
-import { UserContext } from "./UserInfo";//ref UserContext
+import React, { } from "react";
+import { User } from "./UserInfo";//import context User
 
 const Output = () => {
-  const { u } = useContext(UserContext);//UserContext {get, set}
-  return <div className="double fl"><h2 style={{color:'red'}}>User: {u}</h2></div>
+  const { u, setU } = React.useContext(User);//useContext of UserContext [get, set]
+  return <div className="context-scope-none"><h2 style={{color:'red'}}>User: {u}</h2></div>
 }
   
 export default Output;

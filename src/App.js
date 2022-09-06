@@ -20,9 +20,9 @@ import RefTutorial from "./3-a-UseRef/RefTutorial";
 // useImperativeHandle: ref elements
 import ImperativeHandle from "./3-b-UseImperativeHandle/ImperativeHandle";
 // useMemo: cache result
-import MemoTutorial from "./4-a-UseMemo/MemoTutorial";
+import MemoTutorial from "./3-c-UseMemo/MemoTutorial";
 // useCallback: cache function call
-import CallBackTutorial from "./4-b-UseCallback/CallbackTutorial";
+import CallBackTutorial from "./3-d-UseCallback/CallbackTutorial";
 
 //https://www.youtube.com/watch?v=LlvBzyy-558
 
@@ -30,21 +30,21 @@ function App() {
   return (
     <div className="App">
       <StateTutorial/>
-      <hr/>
+      <br/><hr/><br/>
       <ReducerTutorial/>
-      <hr/>
+      <br/><hr/><br/>
       <ContextTutorial />
-      <hr/>
+      <br/><hr/><br/>
       <EffectTutorial/>
-      <hr/>
+      <br/><hr/><br/>
       <LayoutEffectTutorial/>
-      <hr/>
+      <br/><hr/><br/>
       <RefTutorial/>
-      <hr/>
+      <br/><hr/><br/>
       <ImperativeHandle/>
-      <hr/>
+      <br/><hr/><br/>
       <MemoTutorial/>
-      <hr/>
+      <br/><hr/><br/>
       <CallBackTutorial />
     </div>
   );

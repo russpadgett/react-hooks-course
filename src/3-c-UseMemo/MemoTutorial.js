@@ -1,47 +1,27 @@
-import axios from "axios";
-import { useEffect, useState, useMemo } from "react";
+import React from "react";
 
 export default function MemoTutorial() {
-  const [data, setData] = useState(null);
-  const [toggle, setToggle] = useState(false);
+  const [a, setA] = React.useState(0);
+  const [b, setB] = React.useState(0);
+  const [t, setT] = React.useState(true);
   
-  useEffect(() => {
-    console.log("comments api was called");
-    axios
-      .get("https://jsonplaceholder.typicode.com/comments")
-      .then((response) => {
-        setData(response.data);
-      });
-  }, []);
-
-  const findLongestName1 = (comments) => {
-    console.log('findLongestName1 calculated')
-    return comments?.reduce((o, v, i) => {
-      if (o.name.length < v.name.length) o.name = v.name;
-      return o;
-    }).name;
-  };
-
-  const findLongestName2 = (comments) => {
-    console.log('findLongestName2 calculated')
-    return comments?.reduce((o, v, i) => {
-      if (o.name === undefined) o.name = "";
-      if (o.name.length < v.name.length) o.name = v.name;
-      return o;
-    }, {}).name;
-  };
-
-  const getLongestName1 = useMemo(() => findLongestName1(data), [data]);
-  const getLongestName2 = findLongestName2(data);
+  const computeExpensiveValue = ((n)=> {console.log(`${Date.now()} input computed: ${n}`); return n+n;});
+  const memoizedValue = React.useMemo(() => computeExpensiveValue(a), [a]);//only run when a changes
+  const regularValue = computeExpensiveValue(b);//runs on re-render
 
   return (
-    <div className="App">
-      <h1>axios, useEffect, useState, useMemo</h1>
+    <div className="context-scope-red">
+      <h1>useMemo</h1>
       <h2>Cache result</h2>
-      <div> {getLongestName1} </div>
-      <div> {getLongestName2} </div>
-      <button onClick={() => { setToggle(!toggle); }}> Toggle </button>
-      {toggle && <h1> toggle </h1>}
+      <div>input a: {a} </div>
+      <div>memoizedValue: {memoizedValue} </div>
+      <button onClick={() => { setA(a+1); }}> Increment a </button>
+      <hr/>
+      <div>input b: {b} </div>
+      <div>regularValue: {regularValue} </div>
+      <button onClick={() => { setB(b+1); }}> Increment b </button>
+      <hr/>
+      <button onClick={() => { setT(!t); }}> Toggle </button>
     </div>
   );
 }

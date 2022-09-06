@@ -38,6 +38,13 @@
   }
 }
 
-div.double {border-style: double;}
-div.fl{float:left;}
-div.cl{clear: both;}
+.fl{float:left;}
+.cl{clear: both;}
+
+.context-scope-red {margin: 1px;border: 2px dashed red;padding: 1px;}
+.context-scope-blue {margin: 1px;border: 2px dashed blue;padding: 1px;}
+.context-scope-purple {margin: 1px;border: 2px dashed purple;padding: 1px;}
+.context-scope-orange {margin: 1px;border: 2px dashed orange;padding: 1px;}
+.context-scope-yellow {margin: 1px;border: 2px dashed yellow;padding: 1px;}
+.context-scope-green {margin: 1px;border: 2px dashed green;padding: 1px;}
+.context-scope-none {margin: 1px;border: 1px solid black;padding: 1px;}

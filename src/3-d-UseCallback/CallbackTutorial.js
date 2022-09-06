@@ -1,28 +1,32 @@
-//import axios from "axios";
-import { useCallback, useState } from "react";
-import Child from "./Child";
-import Child2 from "./Child2";
+import React from "react";
+import TodosA from "./TodosA";
+import TodosB from "./TodosB";
+import CounterButton from "./CounterButton"
 
-export default function CallBackTutorial() {
-  const [toggle, setToggle] = useState(false);
-  const [toggle2, setToggle2] = useState(false);
-  const [data, setData] = useState("Hello...");
-
-  const returnComment = useCallback(n => data + n, [data]);//() => data;
-  const returnComment2 = useCallback(n => data + n, [data]);
-
-  return (
-    <div className="App">
-      <h1>Cache function call</h1>
-      <h2>useCallback, UseState</h2>
-      <Child returnComment={returnComment} />
-      <Child2 returnComment2={returnComment2} />
-
-      <button onClick={() => { setToggle(!toggle);}}>Toggle</button>
-      {toggle && <h1> toggle </h1>}
-
-      <button onClick={() => {setToggle2(!toggle2); }}>Toggle 2</button>
-      {toggle2 && <h1> toggle 2</h1>}
-    </div>
-  );
+export default function MemoTutorial() {
+    const [count, setCount] = React.useState(0);
+    const [todosA, setTodosA] = React.useState([]);
+    const [todosB, setTodosB] = React.useState([]);
+  
+    const increment = () => {
+      setCount((c) => c + 1);
+    };
+    
+    const addTodoA = React.useCallback(() => {
+      console.log('addTodoA callback ran');
+      setTodosA((t) => [...t, "New Todo A"]);
+    }, []);
+    
+    const addTodoB = () => {
+      console.log('addTodoB ran');
+      setTodosB((t) => [...t, "New Todo B"]);
+    };
+  
+    return (
+      <div className="context-scope-red">
+        <CounterButton count={count} increment ={increment} />
+        <TodosA todosA={todosA} addTodoA={addTodoA} />
+        <TodosB todosB={todosB} addTodoB={addTodoB} />        
+      </div>
+    );
 }

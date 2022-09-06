@@ -1,23 +1,23 @@
-import React, { createContext,useContext, useState } from "react";//import createContext, useContext
-import { AppContext } from "../ContextTutorial";//import AppContext
+import React, { } from "react";
+import { App } from "../ContextTutorial";//import Context App
 import I from "./Input";
 import O from "./Output";
 
-export const UserContext = createContext(null);//export UserContext
+export const User = React.createContext(null);//export Context User
 
 const UserInfo = () => {
-  const { a } = useContext(AppContext);//AppContext {get, set}
-  const [u, setU] = useState("");//UserContext state store
+  const {a, setA} = React.useContext(App);//useContext of AppContext {get, set}
+  const [u, setU] = React.useState("");//useState [get,set]
 
   return (
-    <UserContext.Provider value={{ u, setU }}>{/* UserContext.Provider - add {get,set} to state */}
-      <h1>State -  multi page, multi state items</h1>
-      <h2>createContext, useContext, useState</h2>     
-      <h2>{a}</h2>
-      <I />
-      <O />
-      <div className="cl"></div>
-    </UserContext.Provider>
+    <div className="context-scope-orange">
+      <User.Provider value={{ u, setU }}>{/* User.Provider - set value to local useState */}
+        <h2>{a}</h2>
+        <I />
+        <O />
+        <div className="cl"></div>
+      </User.Provider>
+    </div>
   );
 };
-export default UserInfo;
+export default UserInfo; 

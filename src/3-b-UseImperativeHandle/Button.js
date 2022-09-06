@@ -1,19 +1,20 @@
-import React, { forwardRef, Fragment, useImperativeHandle, useState } from "react";
+import React, { forwardRef, useImperativeHandle, useState } from "react";
 
 const ChildButton = forwardRef((props, ref) => {
-  const [toggle, setToggle] = useState(false);
+  const [state, setState] = useState(false);//local state
 
   useImperativeHandle(ref, () => ({
     alterToggle() {
-      setToggle(!toggle);
+      console.log('alterToggle');
+      setState(!state);//change local state
     },
   }));
   return (
-    <Fragment> 
+    <div className="context-scope-red">
       <h2>forwardRef, useImperativeHandle, useState</h2>
-      <button onClick={()=>setToggle(!toggle)}>Child Button</button>
-      {toggle && <span>Toggle</span>}
-    </Fragment>
+      <button onClick={()=>setState(!state)}>Child Toggle Button</button>
+      <h2>state is {state ? 'true' : 'false'}</h2>
+    </div>
   );
 });
 
