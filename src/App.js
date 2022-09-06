@@ -45,7 +45,7 @@ function App() {
       <br/><hr/><br/>
       <MemoTutorial/>
       <br/><hr/><br/>
-      <CallBackTutorial />
+      <CallBackTutorial/>
     </div>
   );
 }
