@@ -24,7 +24,9 @@ export default function MemoTutorial() {
   
     return (
       <div className="context-scope-red">
-        <CounterButton count={count} increment ={increment} />
+      <h1>useCallback and memo</h1>
+      <h2>Cache a Component</h2>
+      <CounterButton count={count} increment ={increment} />
         <TodosA todosA={todosA} addTodoA={addTodoA} />
         <TodosB todosB={todosB} addTodoB={addTodoB} />        
       </div>

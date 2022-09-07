@@ -12,7 +12,7 @@ function RefTutorial() {
   return (
     <div className="context-scope-red">
       <h1>useRef</h1>
-      <h2>Ref to Dom Element</h2>
+      <h2>Create a Ref to DOM Component</h2>
       <input type="text" placeholder="Ex..." ref={inputRef} />
       <button onClick={onClick}>Log</button>
       <button onClick={()=>{inputRef.current.value = "";}}>Clear</button>

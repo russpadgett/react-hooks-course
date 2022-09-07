@@ -12,7 +12,7 @@ export default function MemoTutorial() {
   return (
     <div className="context-scope-red">
       <h1>useMemo</h1>
-      <h2>Cache result</h2>
+      <h2>Cache a Function Result</h2>
       <div>input a: {a} </div>
       <div>memoizedValue: {memoizedValue} </div>
       <button onClick={() => { setA(a+1); }}> Increment a </button>

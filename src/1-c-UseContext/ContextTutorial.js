@@ -9,7 +9,7 @@ const ContextTutorial = () => {
   return (
     <div className="context-scope-red">
       <App.Provider value={{ a, setA }}>{/* App.Provider - set value to local useState */}
-        <h1>useContext with createContext and useState</h1>
+        <h1>useContext and createContext and useState</h1>
         <h2>State -  multi page, multi state items</h2> 
         <UI />
       </App.Provider>
