@@ -1,9 +1,21 @@
 import React, { } from "react";
-import { User } from "./UserInfo";//import context User
+import { User } from "./UserInfo";//import the UserContext
+import { App } from "../ContextTutorial";//import the AppContext
 
-const Output = () => {
-  const { u, setU } = React.useContext(User);//useContext of UserContext [get, set]
-  return <div className="context-scope-none"><h2 style={{color:'red'}}>User: {u}</h2></div>
+export const Output = () => {
+  return (
+    <div className="context-scope-none">
+    <App.Consumer>
+        {({a}) => (
+          <h2>a:{a}</h2>
+        )}  
+      </App.Consumer>
+      <User.Consumer>  
+        {({u}) => (
+          <h2 style={{color:'red'}}>User: {u}</h2>
+        )}
+      </User.Consumer>
+    </div>
+  )
 }
   
-export default Output;

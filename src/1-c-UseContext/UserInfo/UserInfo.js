@@ -1,23 +1,19 @@
 import React, { } from "react";
-import { App } from "../ContextTutorial";//import Context App
-import I from "./Input";
-import O from "./Output";
+import { Input } from "./Input";
+import { Output } from "./Output";
 
-export const User = React.createContext(null);//export Context User
+export const User = React.createContext(null);//create a UserContext for the User
 
-const UserInfo = () => {
-  const {a, setA} = React.useContext(App);//useContext of AppContext {get, set}
-  const [u, setU] = React.useState("");//useState [get,set]
+export const UserInfo = () => {
+  const [u, setU] = React.useState("");//useState 
 
   return (
     <div className="context-scope-orange">
-      <User.Provider value={{ u, setU }}>{/* User.Provider - set value to local useState */}
-        <h2>{a}</h2>
-        <I />
-        <O />
+      <User.Provider value={{ u, setU }}>{/* UserProvider - All children components now has access to this useState {get,set} */}
+          <Input />
+          <Output />
         <div className="cl"></div>
       </User.Provider>
     </div>
   );
-};
-export default UserInfo; 
+}; 
